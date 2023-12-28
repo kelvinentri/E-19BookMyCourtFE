@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './Authorization.css' 
 import axios from 'axios'
 
-function SignUp() {
+function SignUp({toggleBox}) {
 
 // const [signUpData,setSignUpData]=useState({
 //     name:'',
@@ -54,9 +54,10 @@ axios.post('http://localhost:5000/auth/signup',{name,email,pass}).then((res)=>{
 <label htmlFor="">Confirm password</label>
 <input type="password" value={pass} />
 <button className='btn btn-primary mt-3' onClick={doSignUp}> Signup</button>
+    <p>  already registered user..? <i onClick={()=>toggleBox('login')}>kogin here</i></p>
     </div>
 
-  
+
   )
 }
 
